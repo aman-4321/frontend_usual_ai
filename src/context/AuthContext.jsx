@@ -157,8 +157,8 @@ export const AuthProvider = ({ children }) => {
           throw new Error('Authentication not available in Electron');
         }
       } else {
-        // In web browser, redirect to Google OAuth - simplified
-        window.location.href = `${API_BASE_URL}/auth/google`;
+        // In web browser, redirect to Google OAuth - use web endpoint
+        window.location.href = `${API_BASE_URL}/auth/web/google`;
       }
     } catch (error) {
       console.error('Login failed:', error);
